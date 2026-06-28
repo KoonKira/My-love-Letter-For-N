@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Love ❤️</title>
+  <meta name="description" content="A cinematic love letter — for you, forever." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ====== Parallax ambient background ====== -->
+  <div class="bg-layer bg-gradient"></div>
+  <div class="bg-layer bg-glow glow-1"></div>
+  <div class="bg-layer bg-glow glow-2"></div>
+  <div class="bg-layer bg-glow glow-3"></div>
+  <canvas id="particles"></canvas>
+  <div class="hearts-floating" id="heartsFloating"></div>
+  <div class="heart-rain" id="heartRain"></div>
+
+  <!-- ====== Landing ====== -->
+  <section class="scene landing" id="landing">
+    <div class="landing-inner">
+      <div class="ornament"><i class="fa-solid fa-heart"></i></div>
+      <h1 class="title">For My Love <span class="rose">❤</span></h1>
+      <p class="subtitle">A letter written for you, and only you.</p>
+      <button class="open-btn" id="openBtn">
+        <span>Click to Open My Heart</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+      <p class="hint">tap anywhere to begin the music</p>
+    </div>
+  </section>
+
+  <!-- ====== Main story ====== -->
+  <main id="story" class="story hidden">
+
+    <!-- Memory gallery -->
+    <section class="scene gallery-section reveal">
+      <header class="section-head">
+        <p class="eyebrow">Chapter I</p>
+        <h2>My Everything</h2>
+        <p class="lede">Polaroids drifting through time — click any to live it again.</p>
+      </header>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <!-- ====== Envelope Letter (Chapter II) ====== -->
+    <section class="scene envelope-section reveal" id="envelopeSection">
+      <header class="section-head">
+        <p class="eyebrow">Chapter II</p>
+        <h2>The Letter for You</h2>
+        <p class="lede">A letter from the deepest corner of my heart</p>
+      </header>
+      <div class="env-container">
+        <div class="env-envelope" id="envEnvelope">
+          <div class="env-flap" id="envFlap">
+            <div class="env-seal"><i class="fa-solid fa-heart"></i></div>
+          </div>
+          <div class="env-body"></div>
+          <div class="env-paper" id="envPaper">
+            <div class="env-paper-inner" id="envPaperInner"></div>
+          </div>
+        </div>
+        <p class="env-hint" id="envHint">💌 Touch to open</p>
+      </div>
+    </section>
+
+    <!-- Love Letter -->
+    <section class="scene letter-section reveal">
+      <header class="section-head">
+        <p class="eyebrow">Chapter III</p>
+        <h2>A Silent Promise</h2>
+      </header>
+      <article class="glass letter-card">
+        <div class="letter-paper">
+          <div id="letter" class="letter-text"></div>
+          <span class="cursor" id="cursor">|</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- Timeline -->
+    <section class="scene timeline-section reveal">
+      <header class="section-head">
+        <p class="eyebrow">Chapter IV</p>
+        <h2>Our Timeline</h2>
+      </header>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <!-- Our Precious Memories -->
+    <section class="scene memories-section reveal">
+      <header class="section-head">
+        <p class="eyebrow">Chapter V</p>
+        <h2>Our Precious Memories</h2>
+      </header>
+      <p class="memories-sub">Little moments, big memories.</p>
+      <p class="memories-sub2">Here are some of my favorite memories with you.</p>
+      <div class="memories-divider"></div>
+
+      <div class="memories-timeline">
+
+        <div class="mem-entry left">
+          <div class="mem-node">01</div>
+          <div class="mem-card">
+            <div class="mem-img"><img src="images/memo1.jpg" alt="Memory 1"></div>
+            <div class="mem-body">
+              <h3 class="mem-title">My First Steps<span class="mem-heart">♥</span></h3>
+              <p class="mem-date">April 20, 2025</p>
+              <p class="mem-text">Back when I was secretly stalking your social media, I had no idea that one day you’d
+                become someone so incredibly
+                special to me. Looking at your posts felt so ordinary back then, but now I smile knowing that the girl I
+                admired from a
+                distance is the one who means so much to my heart.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mem-entry right">
+          <div class="mem-node">02</div>
+          <div class="mem-card">
+            <div class="mem-img"><img src="images/memo2.jpg" alt="Memory 2"></div>
+            <div class="mem-body">
+              <h3 class="mem-title">The day I miss<span class="mem-heart">♥</span></h3>
+              <p class="mem-date">November 2, 2025</p>
+                  <p class="mem-text">I still remember when we had planned to go out together, and I was looking forward
+                    to that day so much. But then your
+                    family suddenly decided to take a trip to Pyin Oo Lwin, and you had to go with them. I know you even
+                    argued with your
+                    family because you didn’t want to miss seeing me, and that honestly meant more to me than you know.
+
+                    Even though we couldn’t be together that day, this photo reminds me of you and that little story
+                    behind it. It wasn’t
+                    the day we had planned, but somehow it still became a memory I’ll always treasure.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mem-entry left">
+          <div class="mem-node">03</div>
+          <div class="mem-card">
+            <div class="mem-img"><img src="images/memo3.jpg" alt="Memory 3"></div>
+            <div class="mem-body">
+              <h3 class="mem-title">When Noodles Meant Eyerything <span class="mem-heart">♥</span></h3>
+              <p class="mem-date">May 22, 2026</p>
+              <p class="mem-text">This was taken during our date at Capital Shopping Center—the day someone got adorably
+                grumpy because we couldn’t have
+                noodle soup.
+
+                I still can’t help but smile whenever I think about it. Even your little pout was the cutest thing ever.
+                Looking back
+                now, I realize it was never really about the noodles; it was about spending those little moments
+                together. And somehow,
+                even your tiny sulks became some of my favorite memories with you. </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mem-entry right">
+          <div class="mem-node">04</div>
+          <div class="mem-card">
+            <div class="mem-img"><img src="images/memo4.jpg" alt="Memory 4"></div>
+            <div class="mem-body">
+              <h3 class="mem-title">My Safe Side<span class="mem-heart">♥</span></h3>
+              <p class="mem-date">June 12, 2026</p>
+              <p class="mem-text">As long as I’m holding your hand, I’m not afraid of anything anymore. Somehow, your
+                hand gives me a kind of peace and
+                courage that nothing else ever could. No matter what life throws at us, as long as we’re together, I
+                know we’ll make it
+                through.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mem-entry left">
+          <div class="mem-node">05</div>
+          <div class="mem-card">
+            <div class="mem-img"><img src="images/memo5.jpg" alt="Memory 5"></div>
+            <div class="mem-body">
+              <h3 class="mem-title">The Mini Version of NangHtetThiriNaing<span class="mem-heart">♥</span></h3>
+              <p class="mem-date">December 14, 2025</p>
+              <p class="mem-text">The first time you showed me your childhood photo, I couldn’t believe the little
+                version of you could be that
+                unbelievably adorable. I just sat there thinking, “How could someone be this cute even as a kid?”
+
+                And… I have a tiny confession. I still secretly look at that photo at night sometimes, and yes, I even
+                steal a little
+                kiss from it. It always makes me smile and reminds me how lucky I am to love the same adorable girl—just
+                all grown up
+                now. ❤️</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mem-entry right">
+          <div class="mem-node">06</div>
+          <div class="mem-card">
+            <div class="mem-img"><img src="images/memo6.jpg" alt="Memory 6"></div>
+            <div class="mem-body">
+              <h3 class="mem-title">My Troublemaker!<span class="mem-heart">♥</span></h3>
+              <p class="mem-date">August 03, 2023</p>
+              <p class="mem-text">Lately, every time I try to hold your hand, you always tease me by sticking up your
+                middle finger instead.You’re
+                such a mischievous little troublemaker.
+
+                But somehow, even your playful teasing makes me laugh. That’s just so you—always finding a way to make
+                our moments
+                together fun. No matter how cheeky you are, I still end up smiling every single time. You’re my favorite
+                little menace,
+                and I wouldn’t have you any other way. </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mem-entry left">
+          <div class="mem-node">07</div>
+          <div class="mem-card">
+            <div class="mem-img"><img src="images/memo7.jpg" alt="Memory 7"></div>
+            <div class="mem-body">
+              <h3 class="mem-title">Our Future Home<span class="mem-heart">♥</span></h3>
+              <p class="mem-date">December 18, 2025</p>
+              <p class="mem-text">This is the little home I imagine us living in together someday. It may not be big or
+                fancy, but as long as it’s filled
+                with your laughter, our love, and the memories we create, it’ll always feel like the most beautiful
+                place in the world.
+
+                And maybe one day, if we’re lucky enough to have a house full of little ones running around, we’ll laugh
+                and realize
+                we’ve finally outgrown this tiny home. That’s when we’ll move into a bigger one—carrying all the love
+                and memories we
+                built here with us.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mem-entry right">
+          <div class="mem-node">08</div>
+          <div class="mem-card">
+            <div class="mem-img"><img src="images/memo8.jpg" alt="Memory 8"></div>
+            <div class="mem-body">
+              <h3 class="mem-title">Silly Moments<span class="mem-heart">♥</span></h3>
+              <p class="mem-date">May 05, 2026</p>
+              <p class="mem-text">This was the “X-ray” of our first baby… or at least, that’s what we thought.
+
+                The funniest part? It turned out there were actually two little puppies instead! That’s when I realized
+                I’d somehow
+                ended up marrying the cutest little troublemaker… who might secretly be a puppy in disguise. 🤭
+
+                Don’t worry, I’m only teasing. No matter how much I joke around, you’ll always be my favorite girl—the
+                one I love more
+                than anything. </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="memories-footer">and many more memories to come... <span class="mem-heart">♥</span></p>
+    </section>
+
+    <!-- Countdown -->
+    <section class="scene countdown-section reveal">
+      <header class="section-head">
+        <p class="eyebrow">Chapter VI</p>
+        <h2>Time Spent Loving You</h2>
+        <p class="lede">since <span id="sinceLabel">November 17, 2025</span></p>
+      </header>
+      <div class="countdown glass">
+        <div class="count-unit"><span id="d">0</span><label>Days</label></div>
+        <div class="count-unit"><span id="h">0</span><label>Hours</label></div>
+        <div class="count-unit"><span id="m">0</span><label>Minutes</label></div>
+        <div class="count-unit"><span id="s">0</span><label>Seconds</label></div>
+      </div>
+    </section>
+
+    <!-- ====== A Song for You ====== -->
+    <section class="scene video-section reveal" id="videoSection">
+      <div class="video-moon"></div>
+      <div class="video-stars" id="videoStars"></div>
+      <header class="section-head" style="position:relative;z-index:1;">
+        <p class="eyebrow">For You</p>
+        <h2>A Song for You</h2>
+        <p class="lede">To the moon and back</p>
+      </header>
+
+      <div class="video-container">
+        <div class="video-frame" id="videoFrame">
+          <span class="fcr fcr-tl" aria-hidden="true"><span class="fcr-bow"></span><span class="fcr-fl">🌹</span></span>
+          <span class="fcr fcr-tr" aria-hidden="true"><span class="fcr-bow"></span><span class="fcr-fl">🌹</span></span>
+          <span class="fcr fcr-bl" aria-hidden="true"><span class="fcr-bow"></span><span class="fcr-fl">🌹</span></span>
+          <span class="fcr fcr-br" aria-hidden="true"><span class="fcr-bow"></span><span class="fcr-fl">🌹</span></span>
+          <span class="fdec fdec-lt" aria-hidden="true">✦</span>
+          <span class="fdec fdec-rt" aria-hidden="true">✦</span>
+          <span class="fdec fdec-lb" aria-hidden="true">✦</span>
+          <span class="fdec fdec-rb" aria-hidden="true">✦</span>
+          <div class="video-box" id="videoBox">
+            <video id="loveVideo" src="video/video1.mp4" preload="metadata" playsinline></video>
+            <div class="video-overlay" id="videoOverlay">
+              <div class="video-play-btn">
+                <svg viewBox="0 0 24 24" width="56" height="56">
+                  <circle cx="12" cy="12" r="12" fill="#ff0000" />
+                  <polygon points="10,7 10,17 17,12" fill="#fff" />
+                </svg>
+              </div>
+              <p class="video-hint">Click to play</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Scene -->
+    <section class="scene final-scene" id="finalScene">
+      <div class="stars" id="stars"></div>
+      <div class="rising-hearts" id="risingHearts"></div>
+      <div class="final-inner">
+        <h2 class="final-title">I Will Love You Forever <span class="rose">❤</span></h2>
+        <p class="final-sub">Thank you for being my happiness.</p>
+        <button class="replay-btn" id="replayBtn">
+          <i class="fa-solid fa-rotate-left"></i> Replay Our Story
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== Lightbox ====== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lbClose"><i class="fa-solid fa-xmark"></i></button>
+    <img id="lbImg" alt="memory" />
+  </div>
+
+  <!-- ====== Floating music player ====== -->
+  <div class="player glass" id="player">
+    <button class="play-btn" id="playBtn"><i class="fa-solid fa-play"></i></button>
+    <div class="player-mid">
+      <div class="track-name">Our Song</div>
+      <div class="progress" id="progress">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+    <div class="vol-wrap">
+      <i class="fa-solid fa-volume-low"></i>
+      <input id="vol" type="range" min="0" max="1" step="0.01" value="0.6" />
+    </div>
+  </div>
+
+  <audio id="audio" src="music/love.mp3" loop preload="auto"></audio>
+
+  <!-- ====== Heart Lock Passcode ====== -->
+  <div class="hl-overlay" id="hlOverlay">
+    <div class="hl-bg"></div>
+    <div class="hl-particles" id="hlParticles"></div>
+
+    <div class="hl-center">
+      <div class="hl-shackle">
+        <svg class="hl-shackle-svg" viewBox="0 0 60 44">
+          <defs>
+            <linearGradient id="sk" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ff8cb0" />
+              <stop offset="40%" stop-color="#ff3c7a" />
+              <stop offset="100%" stop-color="#c4125a" />
+            </linearGradient>
+          </defs>
+          <path d="M14 40 V20 C14 7 30 2 30 2 C30 2 46 7 46 20 V40" fill="none" stroke="url(#sk)" stroke-width="6"
+            stroke-linecap="round" />
+          <path d="M14 40 V20 C14 7 30 2 30 2 C30 2 46 7 46 20 V40" fill="none" stroke="rgba(255,255,255,.15)"
+            stroke-width="2.5" stroke-linecap="round" />
+        </svg>
+      </div>
+
+      <div class="hl-heart" id="hlHeart">
+        <svg class="hl-heart-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="pkHeart" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ff6b9d" />
+              <stop offset="35%" stop-color="#ff3c7a" />
+              <stop offset="70%" stop-color="#e6196a" />
+              <stop offset="100%" stop-color="#c4125a" />
+            </linearGradient>
+            <linearGradient id="hlGloss" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="rgba(255,255,255,.45)" />
+              <stop offset="25%" stop-color="rgba(255,255,255,.08)" />
+              <stop offset="50%" stop-color="rgba(255,255,255,0)" />
+              <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M50 94 C22 76 4 56 4 34 C4 16 15 6 30 6 C42 6 48 16 50 26 C52 16 58 6 70 6 C85 6 96 16 96 34 C96 56 78 76 50 94 Z"
+            fill="url(#pkHeart)" stroke="#ff8cb0" stroke-width="1.5" />
+          <path
+            d="M50 90 C24 72 8 54 8 34 C8 18 17 10 30 10 C41 10 47 20 50 28 C53 20 59 10 70 10 C83 10 92 18 92 34 C92 54 76 72 50 90 Z"
+            fill="url(#hlGloss)" />
+          <path d="M50 6 C42 6 30 14 26 20 C22 26 22 32 26 32 C30 32 36 26 42 20 C44 18 48 12 50 6 Z"
+            fill="rgba(255,255,255,.2)" stroke="none" />
+        </svg>
+        <div class="hl-heart-inner">
+          <div class="hl-digits" id="hlDigits">
+            <span class="hld" data-i="0"></span>
+            <span class="hld" data-i="1"></span>
+            <span class="hld" data-i="2"></span>
+            <span class="hld" data-i="3"></span>
+          </div>
+          <p class="hl-error" id="hlError"></p>
+          <div class="hl-keypad" id="hlKeypad">
+            <button class="hlk" data-v="1">1</button>
+            <button class="hlk" data-v="2">2</button>
+            <button class="hlk" data-v="3">3</button>
+            <button class="hlk" data-v="4">4</button>
+            <button class="hlk" data-v="5">5</button>
+            <button class="hlk" data-v="6">6</button>
+            <button class="hlk" data-v="7">7</button>
+            <button class="hlk" data-v="8">8</button>
+            <button class="hlk" data-v="9">9</button>
+            <button class="hlk hlk-sm" data-v="clear">C</button>
+            <button class="hlk" data-v="0">0</button>
+            <button class="hlk hlk-sm" data-v="back"><i class="fa-solid fa-delete-left"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hl-unlock" id="hlUnlock">
+      <div class="hl-cracks" id="hlCracks"></div>
+      <div class="hl-flash" id="hlFlash"></div>
+      <div class="hl-burst" id="hlBurst"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

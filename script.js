@@ -199,7 +199,7 @@ const CONFIG = {
 
 
 /* ===== Heart Lock Passcode ===== */
-const PASSCODE = ['0','0','0','0'];
+const PASSCODE = ['1','1','1','7'];
 let entered = [];
 const hlOverlay = document.getElementById('hlOverlay');
 const hlDigits = document.querySelectorAll('.hld');

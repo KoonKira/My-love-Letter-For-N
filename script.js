@@ -328,22 +328,6 @@ document.getElementById('hlKeypad').addEventListener('click', e => {
     if (entered.every((d, i) => d === PASSCODE[i])) {
       hlError.textContent = '';
       hlSolve();
-      setTimeout(() => {
-        hlOverlay.classList.remove('show');
-        setTimeout(() => { hlOverlay.style.display = 'none'; }, 600);
-        const landing = document.getElementById('landing');
-        const story = document.getElementById('story');
-        landing.style.transition = 'opacity 1s ease, transform 1s ease';
-        landing.style.opacity = '0';
-        landing.style.transform = 'scale(1.05)';
-        setTimeout(() => {
-          landing.style.display = 'none';
-          story.classList.remove('hidden');
-          initStory();
-          tryPlayMusic();
-          startHeartRain();
-        }, 950);
-      }, 2000);
     } else {
       hlError.textContent = 'Oops... Try Again ❤️';
       shakeHL();
